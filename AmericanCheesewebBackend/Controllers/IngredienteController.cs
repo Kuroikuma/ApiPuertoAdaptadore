@@ -44,6 +44,16 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
 
 			return Ok(servicio.SeleccionarPorID(id));
 		}
+		
+
+		[HttpGet("Selecionar/{id}")]
+		public ActionResult<String> Get(string id)
+		{
+			IngredienteServicio servicio = CrearServicio();
+
+			return Ok(servicio.SeleccionarPorNombre(id));
+		}
+
 
 		// POST api/<ProductoController>
 		[HttpPost]

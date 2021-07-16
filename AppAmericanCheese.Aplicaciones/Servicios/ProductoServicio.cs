@@ -42,9 +42,10 @@ namespace AppAmericanCheese.Aplicaciones.Servicios
 					crearProducto.CostoDeIngredientes = IngredienteSeleccionado.precio * crearProducto.CantidadIngrediente;
 					entidad.Costo = entidad.Costo + crearProducto.CostoDeIngredientes;
 					repositorioCrearProducto.Agregar(crearProducto);
+					repositorioProducto.Editar(entidad);
 				});
 			}
-			repositorioProducto.Editar(entidad);
+			
 			repositorioProducto.GuardarTodosLosCambios();
 			return entidad;
 		}

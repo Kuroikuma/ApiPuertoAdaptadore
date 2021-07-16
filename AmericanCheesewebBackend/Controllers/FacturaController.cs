@@ -56,7 +56,14 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
 
 			var resultado = servicio.Agregar(Entidad);
 
-			return Ok(resultado);
+			return Ok(new Factura()
+			{
+				ClienteID = resultado.ClienteID,
+				EmpleadoID = resultado.EmpleadoID,
+				FacturaID = resultado.FacturaID,
+				Fecha = resultado.Fecha,
+				Total = resultado.Total,
+			});
 		}
 
 

@@ -8,7 +8,7 @@ namespace AppAmericanCheese.Infraestructura.Datos
         {
             DbAmericanCheese db = new DbAmericanCheese();
             db.Database.EnsureCreated();
-            Console.ReadKey();
+            Console.WriteLine("success full");
         }
     }
 }

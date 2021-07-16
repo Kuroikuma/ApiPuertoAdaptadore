@@ -1,0 +1,50 @@
+Consulta Producto
+{
+    "categoriaID": "48c8c50d-5b40-45a0-9e85-77255f559ade",
+    "nombre": "Pizza hawaina",
+    "precio": 343,
+    "tamaño": 8,
+    "stock":300,
+    "imagen": "./Content/Image/Pizza1.jpg",
+    "isStock":false,
+    "descripcion":"la mejor pizza de nicaragua",
+    "crearProductosNav":[
+        {
+            "ingredienteID": "b62c4900-ab4b-4f8a-aa11-014bf1305765",
+            "CantidadIngrediente":2
+        },
+        {
+            "ingredienteID": "660e805d-7b08-4f19-ada3-164ca168902a",
+            "CantidadIngrediente":2
+        },
+        {
+            "ingredienteID": "e93bf852-640c-4673-8c95-6e5912089def",
+            "CantidadIngrediente":2
+        }
+    ]
+
+}
+
+Consulta Factura 
+
+{
+    "ClienteID": "6f7c4827-d1be-44ac-9d95-edb893fc2e68",
+    "EmpleadoID": "4d12ee20-eea2-4c17-8f66-2bb1a3272b96",
+    "Fecha": "2019-09-12",
+    "Total":300,
+    "facturaDetallesNav":[
+        {
+            "ProductoID": "3E573DD1-7C3D-4244-B2DF-40AF2255114D",
+            "CatidadProductosVendido":2
+        },
+         {
+            "ProductoID": "71870B86-CFA5-4FDE-9A4C-81773EEAE8D8",
+            "CatidadProductosVendido":2
+        },
+         {
+            "ProductoID": "5F2A40E1-F078-4FBD-913A-8C958468BC65",
+            "CatidadProductosVendido":2
+        }
+    ]
+
+}

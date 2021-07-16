@@ -37,6 +37,8 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
 			return Ok(servicio.Listar());
 		}
 
+
+
 		// GET api/<ProductoController>/5
 		[HttpGet("{id}")]
 		public ActionResult<Producto> Get(Guid id)
@@ -46,6 +48,43 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
 			return Ok(servicio.SeleccionarPorID(id));
 		}
 
+		[HttpGet("Seleccionar/{id}")]
+		public ActionResult GetCategoria(String id)
+		{
+			DbAmericanCheese context = new DbAmericanCheese();
+			try
+			{
+
+				//var SeleccionarProducto = context.Producto.Where(s => s.IdCategoria == id).ToList();
+				var SeleccionarProducto = (from c in context.Categoria
+										   join pd in context.Producto on c.CategoriaID  equals pd.CategoriaID
+										   where c.Nombre == id
+										   select new
+										   {
+											   Categoria = c.Nombre,
+											   Producto = pd.Nombre,
+											   Imagen = pd.Imagen,
+											   Precio = pd.Precio,
+											   Tamaño = pd.Tamaño,
+											   Ingrediente = (from cp in context.CrearProducto
+															  join p in context.Producto on cp.ProductoID equals p.ProductoID
+															  join i in context.Ingredientes on cp.IngredienteID equals i.IngredienteID
+															  where cp.ProductoID == pd.ProductoID
+															  select new
+															  {
+																  Ingrediente = i.Nombre,
+
+															  }).ToList()
+										   }).ToList();
+				return Ok(SeleccionarProducto);
+			}
+			catch (Exception e)
+			{
+
+				return BadRequest(e.Message);
+			}
+		}
+
 		// POST api/<ProductoController>
 		[HttpPost]
 		public ActionResult<Producto> Post([FromBody] Producto Entidad)
@@ -53,8 +92,23 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
 			ProductoServicio servicio = CrearServicio();
 
 			var resultado = servicio.Agregar(Entidad);
-
-			return Ok(resultado);
+		
+			
+			return Ok(new Producto()
+			{
+				ProductoID = resultado.ProductoID,
+				CategoriaID = resultado.CategoriaID,
+				Nombre = resultado.Nombre,
+				Precio = resultado.Precio,
+				Stock = resultado.Stock,
+				Tamaño = resultado.Tamaño,
+				isStock = resultado.isStock,
+				Imagen = resultado.Imagen,
+				Descripcion = resultado.Descripcion,
+				Costo = resultado.Costo,
+		
+		});
+			
 		}
 
 		// PUT api/<ProductoController>/5

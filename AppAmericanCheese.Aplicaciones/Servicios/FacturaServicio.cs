@@ -64,9 +64,6 @@ namespace AppAmericanCheese.Aplicaciones.Servicios
 			});
 
 			repositorioFactura.GuardarTodosLosCambios();
-			repositorioProducto.GuardarTodosLosCambios();
-			repositorioIngrediente.GuardarTodosLosCambios();
-
 			return ventaAgregada;
 		}
 
