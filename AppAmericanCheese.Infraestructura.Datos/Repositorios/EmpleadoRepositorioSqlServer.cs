@@ -40,7 +40,7 @@ namespace AppAmericanCheese.Infraestructura.Datos.Repositorios
 				EntidadSeleccionada.Apellido = Entidad.Apellido;
 				EntidadSeleccionada.Contraseña = Entidad.Contraseña;
 				EntidadSeleccionada.Usuario = Entidad.Usuario;
-
+				EntidadSeleccionada.Correo = Entidad.Correo;
 
 				db.Entry(EntidadSeleccionada).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
 			}

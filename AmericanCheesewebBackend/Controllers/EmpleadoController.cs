@@ -14,42 +14,59 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
 {
 	[Route("api/[controller]")]
 	[ApiController]
-	public class CategoriaController : ControllerBase
+	public class EmpleadoController : ControllerBase
 	{
 
-		public CategoriaServicio CrearServicio()
+		public EmpleadoServicio CrearServicio()
 		{
 			DbAmericanCheese db = new DbAmericanCheese();
-			CategoriaRepositorioSqlServer repositorio = new CategoriaRepositorioSqlServer(db);
+			EmpleadoRepositorioSqlServer repositorio = new EmpleadoRepositorioSqlServer(db);
 
-			CategoriaServicio servicio = new CategoriaServicio(repositorio);
+			EmpleadoServicio servicio = new EmpleadoServicio(repositorio);
 
 			return servicio;
 		}
 
 		// GET: api/<ProductoController>
 		[HttpGet]
-		public ActionResult<IEnumerable<Categoria>> Get()
+		public ActionResult<IEnumerable<Empleado>> Get()
 		{
-			CategoriaServicio servicio = CrearServicio();
+			EmpleadoServicio servicio = CrearServicio();
 
 			return Ok(servicio.Listar());
 		}
 
 		// GET api/<ProductoController>/5
 		[HttpGet("{id}")]
-		public ActionResult<Categoria> Get(Guid id)
+		public ActionResult<Empleado> Get(Guid id)
 		{
-			CategoriaServicio servicio = CrearServicio();
+			EmpleadoServicio servicio = CrearServicio();
 
 			return Ok(servicio.SeleccionarPorID(id));
 		}
 
+		[HttpGet("Seleccionar/{id}")]
+		public ActionResult<Empleado> GetSelect(string id)
+		{
+            try
+            {
+				DbAmericanCheese db = new DbAmericanCheese();
+				var EmpleadoSeleccionado = db.Empleado.Where(c => c.Correo == id).FirstOrDefault();
+				EmpleadoServicio servicio = CrearServicio();
+				return Ok(servicio.SeleccionarPorID(EmpleadoSeleccionado.EmpleadoID));
+			}
+            catch (Exception)
+            {
+
+				return null;
+            }
+			
+		}
 		// POST api/<ProductoController>
 		[HttpPost]
-		public ActionResult<Categoria> Post([FromBody] Categoria Entidad)
+		public ActionResult<Empleado> Post([FromBody] Empleado Entidad)
 		{
-			CategoriaServicio servicio = CrearServicio();
+			EmpleadoServicio servicio = CrearServicio();
 
 			var resultado = servicio.Agregar(Entidad);
 
@@ -58,11 +75,11 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
 
 		// PUT api/<ProductoController>/5
 		[HttpPut("{id}")]
-		public ActionResult Put(Guid id, [FromBody] Categoria Entidad)
+		public ActionResult Put(Guid id, [FromBody] Empleado Entidad)
 		{
-			CategoriaServicio servicio = CrearServicio();
+			EmpleadoServicio servicio = CrearServicio();
 
-			Entidad.CategoriaID = id;
+			Entidad.EmpleadoID = id;
 
 			servicio.Editar(Entidad);
 
@@ -73,7 +90,7 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
 		[HttpDelete("{id}")]
 		public ActionResult Delete(Guid id)
 		{
-			CategoriaServicio servicio = CrearServicio();
+			EmpleadoServicio servicio = CrearServicio();
 
 			servicio.Eliminar(id);
 

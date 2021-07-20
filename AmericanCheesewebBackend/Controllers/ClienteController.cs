@@ -38,16 +38,25 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
 
 		// GET api/<ProductoController>/5
 		[HttpGet("{id}")]
-		public ActionResult<Categoria> Get(Guid id)
+		public ActionResult<Cliente> Get(Guid id)
 		{
+	
 			ClienteServicio servicio = CrearServicio();
 
 			return Ok(servicio.SeleccionarPorID(id));
 		}
+		[HttpGet("Seleccionar/{id}")]
+		public ActionResult<Cliente> GetSelect(string id)
+		{
+			DbAmericanCheese db = new DbAmericanCheese();
+			var ClienteSeleccionado = db.Clientes.Where(c => c.Correo == id).FirstOrDefault();
+			ClienteServicio servicio = CrearServicio();
 
+			return Ok(servicio.SeleccionarPorID(ClienteSeleccionado.ClienteID));
+		}
 		// POST api/<ProductoController>
 		[HttpPost]
-		public ActionResult<Producto> Post([FromBody] Cliente Entidad)
+		public ActionResult<Cliente> Post([FromBody] Cliente Entidad)
 		{
 			ClienteServicio servicio = CrearServicio();
 
