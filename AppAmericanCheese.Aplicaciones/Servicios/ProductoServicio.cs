@@ -57,8 +57,30 @@ namespace AppAmericanCheese.Aplicaciones.Servicios
 
 		public void Editar(Producto entidad)
 		{
-			repositorioProducto.Editar(entidad);
+			 repositorioProducto.Editar(entidad);
+
+
+			if (entidad.isStock == false)
+			{
+				entidad.crearProductosNav.ForEach(crearProducto => {
+					var IngredienteSeleccionado = repositorioIngrediente.SeleccionarPorID(crearProducto.IngredienteID);
+					if (IngredienteSeleccionado == null)
+						throw new NullReferenceException("Usted está intentando hacer una pizza con un ingrediente que no exite 😡😡😡...");
+
+					crearProducto.ProductoID = entidad.ProductoID;
+
+					crearProducto.CostoDeIngredientes = IngredienteSeleccionado.precio * crearProducto.CantidadIngrediente;
+					entidad.Costo = entidad.Costo + crearProducto.CostoDeIngredientes;
+                    if (crearProducto.CrearProductoID == null) repositorioCrearProducto.Agregar(crearProducto); 
+					else repositorioCrearProducto.Editar(crearProducto);
+				
+					
+					repositorioProducto.Editar(entidad);
+				});
+			}
+
 			repositorioProducto.GuardarTodosLosCambios();
+			
 		}
 
 		public void Eliminar(Guid entidadId)

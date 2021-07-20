@@ -62,18 +62,24 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
 										   select new
 										   {
 											   Categoria = c.Nombre,
+											   CategoriaID=c.CategoriaID,
 											   Producto = pd.Nombre,
+											   ProductoID = pd.ProductoID,
 											   Imagen = pd.Imagen,
 											   Precio = pd.Precio,
 											   Tamaño = pd.Tamaño,
+											   Stock = pd.Stock,
+											   IsStock = pd.isStock,
 											   Ingrediente = (from cp in context.CrearProducto
 															  join p in context.Producto on cp.ProductoID equals p.ProductoID
 															  join i in context.Ingredientes on cp.IngredienteID equals i.IngredienteID
 															  where cp.ProductoID == pd.ProductoID
 															  select new
 															  {
+																  IngredienteID=i.IngredienteID,
 																  Ingrediente = i.Nombre,
-
+																  CantidadIngrediente = cp.CantidadIngrediente,
+																  crearProducto=cp.CrearProductoID,
 															  }).ToList()
 										   }).ToList();
 				return Ok(SeleccionarProducto);

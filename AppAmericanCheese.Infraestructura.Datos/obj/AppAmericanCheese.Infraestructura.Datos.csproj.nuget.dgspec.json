@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\FAREM_B4_5\\Music\\ApiPuertoAdaptadore\\AppAmericanCheese.Infraestructura.Datos\\AppAmericanCheese.Infraestructura.Datos.csproj": {}
+    "C:\\Users\\Junior Hurtado\\source\\repos\\ApiPuertoAdaptadore\\AppAmericanCheese.Infraestructura.Datos\\AppAmericanCheese.Infraestructura.Datos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\FAREM_B4_5\\Music\\ApiPuertoAdaptadore\\AppAmericanCheese.Dominio\\AppAmericanCheese.Dominio.csproj": {
+    "C:\\Users\\Junior Hurtado\\source\\repos\\ApiPuertoAdaptadore\\AppAmericanCheese.Dominio\\AppAmericanCheese.Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\FAREM_B4_5\\Music\\ApiPuertoAdaptadore\\AppAmericanCheese.Dominio\\AppAmericanCheese.Dominio.csproj",
+        "projectUniqueName": "C:\\Users\\Junior Hurtado\\source\\repos\\ApiPuertoAdaptadore\\AppAmericanCheese.Dominio\\AppAmericanCheese.Dominio.csproj",
         "projectName": "AppAmericanCheese.Dominio",
-        "projectPath": "C:\\Users\\FAREM_B4_5\\Music\\ApiPuertoAdaptadore\\AppAmericanCheese.Dominio\\AppAmericanCheese.Dominio.csproj",
-        "packagesPath": "C:\\Users\\FAREM_B4_5\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\FAREM_B4_5\\Music\\ApiPuertoAdaptadore\\AppAmericanCheese.Dominio\\obj\\",
+        "projectPath": "C:\\Users\\Junior Hurtado\\source\\repos\\ApiPuertoAdaptadore\\AppAmericanCheese.Dominio\\AppAmericanCheese.Dominio.csproj",
+        "packagesPath": "C:\\Users\\Junior Hurtado\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Junior Hurtado\\source\\repos\\ApiPuertoAdaptadore\\AppAmericanCheese.Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\FAREM_B4_5\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Junior Hurtado\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -70,21 +70,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\FAREM_B4_5\\Music\\ApiPuertoAdaptadore\\AppAmericanCheese.Infraestructura.Datos\\AppAmericanCheese.Infraestructura.Datos.csproj": {
+    "C:\\Users\\Junior Hurtado\\source\\repos\\ApiPuertoAdaptadore\\AppAmericanCheese.Infraestructura.Datos\\AppAmericanCheese.Infraestructura.Datos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\FAREM_B4_5\\Music\\ApiPuertoAdaptadore\\AppAmericanCheese.Infraestructura.Datos\\AppAmericanCheese.Infraestructura.Datos.csproj",
+        "projectUniqueName": "C:\\Users\\Junior Hurtado\\source\\repos\\ApiPuertoAdaptadore\\AppAmericanCheese.Infraestructura.Datos\\AppAmericanCheese.Infraestructura.Datos.csproj",
         "projectName": "AppAmericanCheese.Infraestructura.Datos",
-        "projectPath": "C:\\Users\\FAREM_B4_5\\Music\\ApiPuertoAdaptadore\\AppAmericanCheese.Infraestructura.Datos\\AppAmericanCheese.Infraestructura.Datos.csproj",
-        "packagesPath": "C:\\Users\\FAREM_B4_5\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\FAREM_B4_5\\Music\\ApiPuertoAdaptadore\\AppAmericanCheese.Infraestructura.Datos\\obj\\",
+        "projectPath": "C:\\Users\\Junior Hurtado\\source\\repos\\ApiPuertoAdaptadore\\AppAmericanCheese.Infraestructura.Datos\\AppAmericanCheese.Infraestructura.Datos.csproj",
+        "packagesPath": "C:\\Users\\Junior Hurtado\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Junior Hurtado\\source\\repos\\ApiPuertoAdaptadore\\AppAmericanCheese.Infraestructura.Datos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\FAREM_B4_5\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Junior Hurtado\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -98,8 +98,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\FAREM_B4_5\\Music\\ApiPuertoAdaptadore\\AppAmericanCheese.Dominio\\AppAmericanCheese.Dominio.csproj": {
-                "projectPath": "C:\\Users\\FAREM_B4_5\\Music\\ApiPuertoAdaptadore\\AppAmericanCheese.Dominio\\AppAmericanCheese.Dominio.csproj"
+              "C:\\Users\\Junior Hurtado\\source\\repos\\ApiPuertoAdaptadore\\AppAmericanCheese.Dominio\\AppAmericanCheese.Dominio.csproj": {
+                "projectPath": "C:\\Users\\Junior Hurtado\\source\\repos\\ApiPuertoAdaptadore\\AppAmericanCheese.Dominio\\AppAmericanCheese.Dominio.csproj"
               }
             }
           }
@@ -144,7 +144,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

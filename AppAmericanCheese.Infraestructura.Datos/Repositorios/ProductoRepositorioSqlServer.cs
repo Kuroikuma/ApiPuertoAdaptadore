@@ -40,6 +40,8 @@ namespace AppAmericanCheese.Infraestructura.Datos.Repositorios
 				productoSeleccionado.Descripcion = producto.Descripcion;
 				productoSeleccionado.Precio = producto.Precio;
 				productoSeleccionado.Costo = producto.Costo;
+				productoSeleccionado.Stock= producto.Stock;
+				productoSeleccionado.Tamaño = producto.Tamaño;
 				productoSeleccionado.Imagen = producto.Imagen;
 
 				db.Entry(productoSeleccionado).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
