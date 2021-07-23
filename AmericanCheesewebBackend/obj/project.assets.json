@@ -5731,19 +5731,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\FAREM_B4_5\\.nuget\\packages\\": {}
+    "C:\\Users\\adana\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\FAREM_B4_5\\source\\repos\\ApiPuertoAdaptadore\\AmericanCheesewebBackend\\AppAmericanCheese.Infraestructura.API.csproj",
+      "projectUniqueName": "C:\\Users\\adana\\ApiPuertoAdaptadore\\AmericanCheesewebBackend\\AppAmericanCheese.Infraestructura.API.csproj",
       "projectName": "AppAmericanCheese.Infraestructura.API",
-      "projectPath": "C:\\Users\\FAREM_B4_5\\source\\repos\\ApiPuertoAdaptadore\\AmericanCheesewebBackend\\AppAmericanCheese.Infraestructura.API.csproj",
-      "packagesPath": "C:\\Users\\FAREM_B4_5\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\FAREM_B4_5\\source\\repos\\ApiPuertoAdaptadore\\AmericanCheesewebBackend\\obj\\",
+      "projectPath": "C:\\Users\\adana\\ApiPuertoAdaptadore\\AmericanCheesewebBackend\\AppAmericanCheese.Infraestructura.API.csproj",
+      "packagesPath": "C:\\Users\\adana\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\adana\\ApiPuertoAdaptadore\\AmericanCheesewebBackend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\FAREM_B4_5\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\adana\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5751,20 +5751,21 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://packagesource": {},
+        "https://www.nuget.org/api/v2": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\FAREM_B4_5\\source\\repos\\ApiPuertoAdaptadore\\AppAmericanCheese.Aplicaciones\\AppAmericanCheese.Aplicaciones.csproj": {
-              "projectPath": "C:\\Users\\FAREM_B4_5\\source\\repos\\ApiPuertoAdaptadore\\AppAmericanCheese.Aplicaciones\\AppAmericanCheese.Aplicaciones.csproj"
+            "C:\\Users\\adana\\ApiPuertoAdaptadore\\AppAmericanCheese.Aplicaciones\\AppAmericanCheese.Aplicaciones.csproj": {
+              "projectPath": "C:\\Users\\adana\\ApiPuertoAdaptadore\\AppAmericanCheese.Aplicaciones\\AppAmericanCheese.Aplicaciones.csproj"
             },
-            "C:\\Users\\FAREM_B4_5\\source\\repos\\ApiPuertoAdaptadore\\AppAmericanCheese.Dominio\\AppAmericanCheese.Dominio.csproj": {
-              "projectPath": "C:\\Users\\FAREM_B4_5\\source\\repos\\ApiPuertoAdaptadore\\AppAmericanCheese.Dominio\\AppAmericanCheese.Dominio.csproj"
+            "C:\\Users\\adana\\ApiPuertoAdaptadore\\AppAmericanCheese.Dominio\\AppAmericanCheese.Dominio.csproj": {
+              "projectPath": "C:\\Users\\adana\\ApiPuertoAdaptadore\\AppAmericanCheese.Dominio\\AppAmericanCheese.Dominio.csproj"
             },
-            "C:\\Users\\FAREM_B4_5\\source\\repos\\ApiPuertoAdaptadore\\AppAmericanCheese.Infraestructura.Datos\\AppAmericanCheese.Infraestructura.Datos.csproj": {
-              "projectPath": "C:\\Users\\FAREM_B4_5\\source\\repos\\ApiPuertoAdaptadore\\AppAmericanCheese.Infraestructura.Datos\\AppAmericanCheese.Infraestructura.Datos.csproj"
+            "C:\\Users\\adana\\ApiPuertoAdaptadore\\AppAmericanCheese.Infraestructura.Datos\\AppAmericanCheese.Infraestructura.Datos.csproj": {
+              "projectPath": "C:\\Users\\adana\\ApiPuertoAdaptadore\\AppAmericanCheese.Infraestructura.Datos\\AppAmericanCheese.Infraestructura.Datos.csproj"
             }
           }
         }
@@ -5812,7 +5813,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

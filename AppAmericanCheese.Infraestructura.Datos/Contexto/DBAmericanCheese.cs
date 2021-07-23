@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using AppAmericanCheese.Infraestructura.Datos.Entidades;
 using AppAmericanCheese.Dominio.Entidades;
 using AppAmericanCheese.Infraestructura.Datos.Helper;
+using AppAmericanCheese.Dominio;
 
 namespace AppAmericanCheese.Infraestructura.Datos
 {
@@ -21,7 +22,8 @@ namespace AppAmericanCheese.Infraestructura.Datos
         public DbSet<Ingrediente> Ingredientes { get; set; }
         public DbSet<Producto> Producto { get; set; }
         public DbSet<Cliente> Clientes { get; set; }
-       
+        public DbSet<Root> Root { get; set; }
+
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -40,6 +42,7 @@ namespace AppAmericanCheese.Infraestructura.Datos
             modelBuilder.ApplyConfiguration(new IngredienteConfig());
             modelBuilder.ApplyConfiguration(new ProductoConfig());
             modelBuilder.ApplyConfiguration(new ClienteConfig());
+            modelBuilder.ApplyConfiguration(new RootConfig());
         }
     }
 }

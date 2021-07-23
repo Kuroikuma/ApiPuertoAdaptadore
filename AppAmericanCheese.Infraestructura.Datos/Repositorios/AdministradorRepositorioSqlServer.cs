@@ -19,7 +19,7 @@ namespace AppAmericanCheese.Infraestructura.Datos.Repositorios
 
         public Administrador Agregar(Administrador entidad)
         {
-            entidad.AdministradorID = Guid.NewGuid();
+            entidad.AdministradoID = Guid.NewGuid();
 
             db.Administrador.Add(entidad);
 
@@ -28,7 +28,7 @@ namespace AppAmericanCheese.Infraestructura.Datos.Repositorios
 
         public void Editar(Administrador entidad)
         {
-            var AdministradorSeleccionado = db.Administrador.Where(c => c.AdministradorID == entidad.AdministradorID).FirstOrDefault();
+            var AdministradorSeleccionado = db.Administrador.Where(c => c.AdministradoID == entidad.AdministradoID).FirstOrDefault();
             if (AdministradorSeleccionado != null)
             {
                 AdministradorSeleccionado.Nombre = entidad.Nombre;
@@ -42,7 +42,7 @@ namespace AppAmericanCheese.Infraestructura.Datos.Repositorios
 
         public void Eliminar(Guid entidadId)
         {
-            var AdministradorSeleccionado = db.Administrador.Where(c => c.AdministradorID == entidadId).FirstOrDefault();
+            var AdministradorSeleccionado = db.Administrador.Where(c => c.AdministradoID == entidadId).FirstOrDefault();
             if (AdministradorSeleccionado != null)
             {
                 db.Administrador.Remove(AdministradorSeleccionado);
@@ -61,7 +61,7 @@ namespace AppAmericanCheese.Infraestructura.Datos.Repositorios
 
         public Administrador SeleccionarPorID(Guid entidadId)
         {
-            var AdministradorSeleccionado = db.Administrador.Where(c => c.AdministradorID == entidadId).FirstOrDefault();
+            var AdministradorSeleccionado = db.Administrador.Where(c => c.AdministradoID == entidadId).FirstOrDefault();
             return AdministradorSeleccionado;
         }
 

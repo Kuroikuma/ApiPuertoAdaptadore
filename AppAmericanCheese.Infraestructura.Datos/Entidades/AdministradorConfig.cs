@@ -11,7 +11,7 @@ namespace AppAmericanCheese.Infraestructura.Datos.Entidades
     {
         public void Configure(EntityTypeBuilder<Administrador> builder)
         {
-            builder.HasKey(A => A.AdministradorID);
+            builder.HasKey(A => A.AdministradoID);
 
             builder.ToTable("Administrador");
         }

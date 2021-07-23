@@ -15,10 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Servicios\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\AppAmericanCheese.Dominio\AppAmericanCheese.Dominio.csproj" />
   </ItemGroup>
 

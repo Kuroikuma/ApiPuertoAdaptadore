@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\FAREM_B4_5\\source\\repos\\ApiPuertoAdaptadore\\AppAmericanCheese.Aplicaciones\\AppAmericanCheese.Aplicaciones.csproj": {}
+    "C:\\Users\\adana\\ApiPuertoAdaptadore\\AppAmericanCheese.Aplicaciones\\AppAmericanCheese.Aplicaciones.csproj": {}
   },
   "projects": {
-    "C:\\Users\\FAREM_B4_5\\source\\repos\\ApiPuertoAdaptadore\\AppAmericanCheese.Aplicaciones\\AppAmericanCheese.Aplicaciones.csproj": {
+    "C:\\Users\\adana\\ApiPuertoAdaptadore\\AppAmericanCheese.Aplicaciones\\AppAmericanCheese.Aplicaciones.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\FAREM_B4_5\\source\\repos\\ApiPuertoAdaptadore\\AppAmericanCheese.Aplicaciones\\AppAmericanCheese.Aplicaciones.csproj",
+        "projectUniqueName": "C:\\Users\\adana\\ApiPuertoAdaptadore\\AppAmericanCheese.Aplicaciones\\AppAmericanCheese.Aplicaciones.csproj",
         "projectName": "AppAmericanCheese.Aplicaciones",
-        "projectPath": "C:\\Users\\FAREM_B4_5\\source\\repos\\ApiPuertoAdaptadore\\AppAmericanCheese.Aplicaciones\\AppAmericanCheese.Aplicaciones.csproj",
-        "packagesPath": "C:\\Users\\FAREM_B4_5\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\FAREM_B4_5\\source\\repos\\ApiPuertoAdaptadore\\AppAmericanCheese.Aplicaciones\\obj\\",
+        "projectPath": "C:\\Users\\adana\\ApiPuertoAdaptadore\\AppAmericanCheese.Aplicaciones\\AppAmericanCheese.Aplicaciones.csproj",
+        "packagesPath": "C:\\Users\\adana\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\adana\\ApiPuertoAdaptadore\\AppAmericanCheese.Aplicaciones\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\FAREM_B4_5\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\adana\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,14 +22,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://packagesource": {},
+          "https://www.nuget.org/api/v2": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\FAREM_B4_5\\source\\repos\\ApiPuertoAdaptadore\\AppAmericanCheese.Dominio\\AppAmericanCheese.Dominio.csproj": {
-                "projectPath": "C:\\Users\\FAREM_B4_5\\source\\repos\\ApiPuertoAdaptadore\\AppAmericanCheese.Dominio\\AppAmericanCheese.Dominio.csproj"
+              "C:\\Users\\adana\\ApiPuertoAdaptadore\\AppAmericanCheese.Dominio\\AppAmericanCheese.Dominio.csproj": {
+                "projectPath": "C:\\Users\\adana\\ApiPuertoAdaptadore\\AppAmericanCheese.Dominio\\AppAmericanCheese.Dominio.csproj"
               }
             }
           }
@@ -74,21 +75,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\FAREM_B4_5\\source\\repos\\ApiPuertoAdaptadore\\AppAmericanCheese.Dominio\\AppAmericanCheese.Dominio.csproj": {
+    "C:\\Users\\adana\\ApiPuertoAdaptadore\\AppAmericanCheese.Dominio\\AppAmericanCheese.Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\FAREM_B4_5\\source\\repos\\ApiPuertoAdaptadore\\AppAmericanCheese.Dominio\\AppAmericanCheese.Dominio.csproj",
+        "projectUniqueName": "C:\\Users\\adana\\ApiPuertoAdaptadore\\AppAmericanCheese.Dominio\\AppAmericanCheese.Dominio.csproj",
         "projectName": "AppAmericanCheese.Dominio",
-        "projectPath": "C:\\Users\\FAREM_B4_5\\source\\repos\\ApiPuertoAdaptadore\\AppAmericanCheese.Dominio\\AppAmericanCheese.Dominio.csproj",
-        "packagesPath": "C:\\Users\\FAREM_B4_5\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\FAREM_B4_5\\source\\repos\\ApiPuertoAdaptadore\\AppAmericanCheese.Dominio\\obj\\",
+        "projectPath": "C:\\Users\\adana\\ApiPuertoAdaptadore\\AppAmericanCheese.Dominio\\AppAmericanCheese.Dominio.csproj",
+        "packagesPath": "C:\\Users\\adana\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\adana\\ApiPuertoAdaptadore\\AppAmericanCheese.Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\FAREM_B4_5\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\adana\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -96,7 +97,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://packagesource": {},
+          "https://www.nuget.org/api/v2": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
@@ -144,7 +146,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

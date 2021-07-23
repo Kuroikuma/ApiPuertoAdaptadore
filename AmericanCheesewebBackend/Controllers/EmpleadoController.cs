@@ -45,22 +45,23 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
 			return Ok(servicio.SeleccionarPorID(id));
 		}
 
-		[HttpGet("Seleccionar/{id}")]
-		public ActionResult<Empleado> GetSelect(string id)
+		[HttpGet("Seleccionar/{correo}/{contraseña}")]
+		public ActionResult<Empleado> GetSelect(string correo, string contraseña)
 		{
-            try
-            {
+			try
+			{
 				DbAmericanCheese db = new DbAmericanCheese();
-				var EmpleadoSeleccionado = db.Empleado.Where(c => c.Correo == id).FirstOrDefault();
+				var EmpleadoSeleccionado = db.Empleado.Where(c => c.Correo == correo).Where(c => c.Contraseña == contraseña).FirstOrDefault();
 				EmpleadoServicio servicio = CrearServicio();
+
 				return Ok(servicio.SeleccionarPorID(EmpleadoSeleccionado.EmpleadoID));
 			}
-            catch (Exception)
-            {
+			catch (Exception e)
+			{
 
-				return null;
-            }
-			
+				return BadRequest(e.Message);
+			}
+
 		}
 		// POST api/<ProductoController>
 		[HttpPost]

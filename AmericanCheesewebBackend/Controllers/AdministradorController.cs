@@ -43,6 +43,25 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
             return Ok(servicio.SeleccionarPorID(id)); ;
         }
 
+        [HttpGet("Seleccionar/{correo}/{contraseña}")]
+        public ActionResult<Administrador> GetSelect(string correo, string contraseña)
+        {
+            try
+            {
+                DbAmericanCheese db = new DbAmericanCheese();
+                var AdministradorSeleccionado = db.Administrador.Where(c => c.Correo == correo).Where(c => c.Contraseña == contraseña).FirstOrDefault();
+                AdministradorServicio servicio = CrearServicio();
+
+                return Ok(servicio.SeleccionarPorID(AdministradorSeleccionado.AdministradoID));
+            }
+            catch (Exception e)
+            {
+
+                return BadRequest(e.Message);
+            }
+
+        }
+
         // POST: api/Administrador
         [HttpPost]
         public ActionResult <Administrador> Post([FromBody] Administrador entidad)
@@ -58,7 +77,7 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
         [HttpPut("{id}")]
         public ActionResult <Administrador> Put(Guid id, [FromBody] Administrador entidad)
         {
-            entidad.AdministradorID = id;
+            entidad.AdministradoID = id;
 
             AdministradorServicio servicio = CrearServicio();
 
