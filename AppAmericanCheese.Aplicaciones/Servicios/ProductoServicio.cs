@@ -73,6 +73,7 @@ namespace AppAmericanCheese.Aplicaciones.Servicios
 					entidad.Costo = entidad.Costo + crearProducto.CostoDeIngredientes;
                     if (crearProducto.CrearProductoID == null) repositorioCrearProducto.Agregar(crearProducto); 
 					else repositorioCrearProducto.Editar(crearProducto);
+
 				
 					
 					repositorioProducto.Editar(entidad);

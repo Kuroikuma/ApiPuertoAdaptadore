@@ -2,6 +2,7 @@
 using AppAmericanCheese.Dominio.Entidades;
 using AppAmericanCheese.Infraestructura.Datos;
 using AppAmericanCheese.Infraestructura.Datos.Repositorios;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -28,6 +29,7 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
 		}
 
 		// GET: api/<ProductoController>
+		[EnableCors("_myAllowSpecificOrigins")]
 		[HttpGet]
 		public ActionResult<IEnumerable<Ingrediente>> Get()
 		{
@@ -37,6 +39,7 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
 		}
 
 		// GET api/<ProductoController>/5
+		[EnableCors("_myAllowSpecificOrigins")]
 		[HttpGet("{id}")]
 		public ActionResult<Ingrediente> Get(Guid id)
 		{
@@ -44,8 +47,8 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
 
 			return Ok(servicio.SeleccionarPorID(id));
 		}
-		
 
+		[EnableCors("_myAllowSpecificOrigins")]
 		[HttpGet("Selecionar/{id}")]
 		public ActionResult<String> Get(string id)
 		{
@@ -56,6 +59,7 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
 
 
 		// POST api/<ProductoController>
+		[EnableCors("_myAllowSpecificOrigins")]
 		[HttpPost]
 		public ActionResult<Ingrediente> Post([FromBody] Ingrediente Entidad)
 		{
@@ -67,6 +71,7 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
 		}
 
 		// PUT api/<ProductoController>/5
+		[EnableCors("_myAllowSpecificOrigins")]
 		[HttpPut("{id}")]
 		public ActionResult Put(Guid id, [FromBody] Ingrediente Entidad)
 		{
@@ -80,6 +85,7 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
 		}
 
 		// DELETE api/<ProductoController>/5
+		[EnableCors("_myAllowSpecificOrigins")]
 		[HttpDelete("{id}")]
 		public ActionResult Delete(Guid id)
 		{

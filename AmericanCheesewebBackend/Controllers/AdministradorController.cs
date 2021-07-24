@@ -8,6 +8,7 @@ using AppAmericanCheese.Aplicaciones.Servicios;
 using AppAmericanCheese.Dominio.Entidades;
 using AppAmericanCheese.Infraestructura.Datos;
 using AppAmericanCheese.Infraestructura.Datos.Repositorios;
+using Microsoft.AspNetCore.Cors;
 
 namespace AppAmericanCheese.Infraestructura.API.Controllers
 {
@@ -26,6 +27,7 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
         }
 
         // GET: api/Administrador
+        [EnableCors("_myAllowSpecificOrigins")]
         [HttpGet]
         public ActionResult<Administrador> Get()
         {
@@ -35,6 +37,7 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
         }
 
         // GET: api/Administrador/5
+        [EnableCors("_myAllowSpecificOrigins")]
         [HttpGet("{id}", Name = "Get")]
         public ActionResult<Administrador> Get(Guid id)
         {
@@ -43,6 +46,7 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
             return Ok(servicio.SeleccionarPorID(id)); ;
         }
 
+        [EnableCors("_myAllowSpecificOrigins")]
         [HttpGet("Seleccionar/{correo}/{contraseña}")]
         public ActionResult<Administrador> GetSelect(string correo, string contraseña)
         {
@@ -63,6 +67,7 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
         }
 
         // POST: api/Administrador
+        [EnableCors("_myAllowSpecificOrigins")]
         [HttpPost]
         public ActionResult <Administrador> Post([FromBody] Administrador entidad)
         {
@@ -74,6 +79,7 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
         }
 
         // PUT: api/Administrador/5
+        [EnableCors("_myAllowSpecificOrigins")]
         [HttpPut("{id}")]
         public ActionResult <Administrador> Put(Guid id, [FromBody] Administrador entidad)
         {
@@ -87,6 +93,7 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
         }
 
         // DELETE: api/ApiWithActions/5
+        [EnableCors("_myAllowSpecificOrigins")]
         [HttpDelete("{id}")]
         public ActionResult <Administrador> Delete(Guid id)
         {

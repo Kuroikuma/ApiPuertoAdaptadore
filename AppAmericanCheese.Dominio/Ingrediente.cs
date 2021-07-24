@@ -11,6 +11,7 @@ namespace AppAmericanCheese.Dominio.Entidades
         public decimal precio { get; set; }
         public decimal Stock { get; set; }
         public string Imagen { get; set; }
+        public decimal onzas { get; set; }
         public List<CrearProducto> crearProductosNav { get; set; }
     }
 }

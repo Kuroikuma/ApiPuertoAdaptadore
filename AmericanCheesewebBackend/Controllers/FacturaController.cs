@@ -2,6 +2,7 @@
 using AppAmericanCheese.Dominio.Entidades;
 using AppAmericanCheese.Infraestructura.Datos;
 using AppAmericanCheese.Infraestructura.Datos.Repositorios;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,7 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
 		}
 
 		// GET: api/<ProductoController>
+		[EnableCors("_myAllowSpecificOrigins")]
 		[HttpGet]
 		public ActionResult<IEnumerable<Factura>> Get()
 		{
@@ -40,6 +42,7 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
 		}
 
 		// GET api/<ProductoController>/5
+		[EnableCors("_myAllowSpecificOrigins")]
 		[HttpGet("{id}")]
 		public ActionResult<Factura> Get(Guid id)
 		{
@@ -49,6 +52,7 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
 		}
 
 		// POST api/<ProductoController>
+		[EnableCors("_myAllowSpecificOrigins")]
 		[HttpPost]
 		public ActionResult<Factura> Post([FromBody] Factura Entidad)
 		{
@@ -68,6 +72,7 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
 
 
 		// DELETE api/<ProductoController>/5
+		[EnableCors("_myAllowSpecificOrigins")]
 		[HttpDelete("{id}")]
 		public ActionResult Delete(Guid id)
 		{
