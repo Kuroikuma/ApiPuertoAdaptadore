@@ -40,6 +40,7 @@ namespace AppAmericanCheese.Infraestructura.Datos.Repositorios
 				ingredienteSeleccionado.precio = ingrediente.precio;
 				ingredienteSeleccionado.Stock = ingrediente.Stock;
 				ingredienteSeleccionado.Imagen = ingrediente.Imagen;
+				ingredienteSeleccionado.unidadMedida = ingrediente.unidadMedida;
 
 				db.Entry(ingredienteSeleccionado).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
 			}
