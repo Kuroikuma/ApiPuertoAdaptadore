@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Cors;
 using System.Threading.Tasks;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -61,13 +62,20 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
 		// POST api/<ProductoController>
 		[EnableCors("_myAllowSpecificOrigins")]
 		[HttpPost]
-		public ActionResult<Ingrediente> Post([FromBody] Ingrediente Entidad)
+		public ActionResult<String> Post([FromBody] Ingrediente Entidad)
 		{
-			IngredienteServicio servicio = CrearServicio();
+			try
+			{
+					IngredienteServicio servicio = CrearServicio();
+		
+					var resultado = servicio.Agregar(Entidad);
 
-			var resultado = servicio.Agregar(Entidad);
-
-			return Ok(resultado);
+					return Ok("success");
+			}
+			catch (Exception e)
+			{
+				return BadRequest("error");
+			}
 		}
 
 		// PUT api/<ProductoController>/5
