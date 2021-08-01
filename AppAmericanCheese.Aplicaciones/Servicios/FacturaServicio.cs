@@ -46,7 +46,7 @@ namespace AppAmericanCheese.Aplicaciones.Servicios
 				detalle.PrecioProductosVendido = productoSeleccionado.Precio * detalle.CatidadProductosVendido;
 				
 				repositorioDetalle.Agregar(detalle);
-                if (productoSeleccionado.isStock==true)
+                if (productoSeleccionado.isCompound==true)
                 {
 					productoSeleccionado.Stock -= detalle.CatidadProductosVendido;
 					repositorioProducto.Editar(productoSeleccionado);

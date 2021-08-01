@@ -48,6 +48,15 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
 			return Ok(servicio.SeleccionarPorID(id));
 		}
 
+		[EnableCors("_myAllowSpecificOrigins")]
+		[HttpGet("Selecionar/{id}")]
+		public ActionResult<String> Get(string id)
+		{
+			CategoriaServicio servicio = CrearServicio();
+
+			return Ok(servicio.SeleccionarPorNombre(id));
+		}
+
 		// POST api/<ProductoController>
 		[EnableCors("_myAllowSpecificOrigins")]
 		[HttpPost]

@@ -28,9 +28,13 @@ namespace AppAmericanCheese.Aplicaciones.Servicios
 		public Producto Agregar(Producto entidad)
 		{
 			var ProductoAgregada = repositorioProducto.Agregar(entidad);
-            
 
-            if (entidad.isStock==false)
+			if (ProductoAgregada.Nombre == "" || ProductoAgregada.Nombre == null || ProductoAgregada.Precio == 0 || ProductoAgregada.Tamaño==null || ProductoAgregada.Tamaño == "")
+			{
+				throw new Exception("error");
+			}
+
+			if (entidad.isCompound==true)
             {
 				entidad.crearProductosNav.ForEach(crearProducto => {
 					var IngredienteSeleccionado = repositorioIngrediente.SeleccionarPorID(crearProducto.IngredienteID);
@@ -60,7 +64,7 @@ namespace AppAmericanCheese.Aplicaciones.Servicios
 			 repositorioProducto.Editar(entidad);
 
 
-			if (entidad.isStock == false)
+			if (entidad.isCompound == false)
 			{
 				entidad.crearProductosNav.ForEach(crearProducto => {
 					var IngredienteSeleccionado = repositorioIngrediente.SeleccionarPorID(crearProducto.IngredienteID);

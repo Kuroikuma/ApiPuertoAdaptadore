@@ -4,6 +4,7 @@ using AppAmericanCheese.Infraestructura.Datos;
 using AppAmericanCheese.Infraestructura.Datos.Repositorios;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
 	[ApiController]
 	public class ProductoController : ControllerBase
 	{
-
+		private List<Producto> _Producto;
 		public ProductoServicio CrearServicio()
 		{
 			DbAmericanCheese db = new DbAmericanCheese();
@@ -40,6 +41,58 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
 		}
 
 
+		[EnableCors("_myAllowSpecificOrigins")]
+		[HttpGet("Selecionar/Producto/{buscar}")]
+		public ActionResult<String> Get(string buscar)
+		{
+			DbAmericanCheese context = new DbAmericanCheese();
+			try
+			{
+				
+				_Producto = context.Producto.ToList();
+				//var SeleccionarProducto = context.Producto.Where(s => s.IdCategoria == id).ToList();
+				if (!string.IsNullOrEmpty(buscar))
+				{
+					foreach (var item in buscar.Split(new char[] { ' ' },
+							 StringSplitOptions.RemoveEmptyEntries))
+					{
+						_Producto = _Producto.Where(x => x.Nombre.Contains(item)).ToList();
+					
+					};
+				}
+				var resultado = _Producto.Join(context.Categoria,
+							Producto => Producto.CategoriaID,
+							Categoria => Categoria.CategoriaID ,
+							(Producto, Categoria) => new
+							{
+								Categoria = Categoria.Nombre,
+								CategoriaID = Producto.CategoriaID,
+								Nombre = Producto.Nombre,
+								ProductoID = Producto.ProductoID,
+								Imagen = Producto.Imagen,
+								Precio = Producto.Precio,
+								Tamaño = Producto.Tamaño,
+								Ingrediente = (from cp in context.CrearProducto
+											   join p in context.Producto on cp.ProductoID equals p.ProductoID
+											   join i in context.Ingredientes on cp.IngredienteID equals i.IngredienteID
+											   where cp.ProductoID == Producto.ProductoID
+											   select new
+											   {
+												   IngredienteID = i.IngredienteID,
+												   Ingrediente = i.Nombre,
+												   CantidadIngrediente = cp.CantidadIngrediente,
+												   crearProducto = cp.CrearProductoID,
+											   }).ToList()
+
+							}
+						).ToList();
+				return Ok(resultado);
+			}
+			catch (Exception e)
+			{
+				return BadRequest(e.Message);
+			}
+		}
 
 		// GET api/<ProductoController>/5
 		[EnableCors("_myAllowSpecificOrigins")]
@@ -62,18 +115,18 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
 				//var SeleccionarProducto = context.Producto.Where(s => s.IdCategoria == id).ToList();
 				var SeleccionarProducto = (from c in context.Categoria
 										   join pd in context.Producto on c.CategoriaID  equals pd.CategoriaID
-										   where c.Nombre == id
+										   where c.Nombre == id 
 										   select new
 										   {
 											   Categoria = c.Nombre,
 											   CategoriaID=c.CategoriaID,
-											   Producto = pd.Nombre,
+											   Nombre = pd.Nombre,
 											   ProductoID = pd.ProductoID,
 											   Imagen = pd.Imagen,
 											   Precio = pd.Precio,
 											   Tamaño = pd.Tamaño,
 											   Stock = pd.Stock,
-											   IsStock = pd.isStock,
+											   isCompound = pd.isCompound,
 											   Ingrediente = (from cp in context.CrearProducto
 															  join p in context.Producto on cp.ProductoID equals p.ProductoID
 															  join i in context.Ingredientes on cp.IngredienteID equals i.IngredienteID
@@ -98,28 +151,21 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
 		// POST api/<ProductoController>
 		[EnableCors("_myAllowSpecificOrigins")]
 		[HttpPost]
-		public ActionResult<Producto> Post([FromBody] Producto Entidad)
+		public ActionResult<String> Post([FromBody] Producto Entidad)
 		{
-			ProductoServicio servicio = CrearServicio();
-
-			var resultado = servicio.Agregar(Entidad);
-		
-			
-			return Ok(new Producto()
+			try
 			{
-				ProductoID = resultado.ProductoID,
-				CategoriaID = resultado.CategoriaID,
-				Nombre = resultado.Nombre,
-				Precio = resultado.Precio,
-				Stock = resultado.Stock,
-				Tamaño = resultado.Tamaño,
-				isStock = resultado.isStock,
-				Imagen = resultado.Imagen,
-				Descripcion = resultado.Descripcion,
-				Costo = resultado.Costo,
-		
-		});
-			
+				ProductoServicio servicio = CrearServicio();
+
+				var resultado = servicio.Agregar(Entidad);
+
+				return Ok("success");
+			}
+			catch (Exception e)
+			{
+				return BadRequest("error");
+			}
+
 		}
 
 		// PUT api/<ProductoController>/5
