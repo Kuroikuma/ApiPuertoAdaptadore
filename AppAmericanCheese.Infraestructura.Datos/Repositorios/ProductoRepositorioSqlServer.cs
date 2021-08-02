@@ -36,9 +36,17 @@ namespace AppAmericanCheese.Infraestructura.Datos.Repositorios
 			var productoSeleccionado = db.Producto.Where(c => c.ProductoID == producto.ProductoID).FirstOrDefault();
 			if (productoSeleccionado != null)
 			{
+				if (productoSeleccionado.Precio == null || productoSeleccionado.Precio == 0)
+				{
+					productoSeleccionado.Precio = productoSeleccionado.Precio;
+				}
+				else
+				{
+					productoSeleccionado.Precio = (productoSeleccionado.Precio + productoSeleccionado.Precio) / 2;
+				}
+
 				productoSeleccionado.Nombre = producto.Nombre;
 				productoSeleccionado.Descripcion = producto.Descripcion;
-				productoSeleccionado.Precio = producto.Precio;
 				productoSeleccionado.Costo = producto.Costo;
 				productoSeleccionado.Stock= producto.Stock;
 				productoSeleccionado.Tamaño = producto.Tamaño;
