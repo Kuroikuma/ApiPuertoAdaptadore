@@ -1,8 +1,10 @@
 ﻿using AppAmericanCheese.Aplicaciones.Interfaces;
 using AppAmericanCheese.Dominio.Entidades;
 using AppAmericanCheese.Dominio.Interfaces.Repositorios;
+using AppAmericanCheese.Infraestructura.Datos;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace AppAmericanCheese.Aplicaciones.Servicios
@@ -61,10 +63,21 @@ namespace AppAmericanCheese.Aplicaciones.Servicios
 
 		public void Editar(Producto entidad)
 		{
-			 repositorioProducto.Editar(entidad);
+			
+			DbAmericanCheese db = new DbAmericanCheese();
+			var productoSeleccionado = db.Producto.Where(c => c.ProductoID == entidad.ProductoID).FirstOrDefault();
+
+			if (entidad.Precio == null || entidad.Precio == 0)
+			{
+				productoSeleccionado.Precio = productoSeleccionado.Precio;
+			}
+			else
+			{
+				productoSeleccionado.Precio = (productoSeleccionado.Precio + entidad.Precio) / 2;
+			}
 
 
-			if (entidad.isCompound == false)
+			if (entidad.isCompound == true)
 			{
 				entidad.crearProductosNav.ForEach(crearProducto => {
 					var IngredienteSeleccionado = repositorioIngrediente.SeleccionarPorID(crearProducto.IngredienteID);
@@ -74,15 +87,16 @@ namespace AppAmericanCheese.Aplicaciones.Servicios
 					crearProducto.ProductoID = entidad.ProductoID;
 
 					crearProducto.CostoDeIngredientes = IngredienteSeleccionado.precio * crearProducto.CantidadIngrediente;
-					entidad.Costo = entidad.Costo + crearProducto.CostoDeIngredientes;
+					productoSeleccionado.Costo = productoSeleccionado.Costo + crearProducto.CostoDeIngredientes;
                     if (crearProducto.CrearProductoID == null) repositorioCrearProducto.Agregar(crearProducto); 
 					else repositorioCrearProducto.Editar(crearProducto);
 
 				
 					
-					repositorioProducto.Editar(entidad);
+					repositorioProducto.Editar(productoSeleccionado);
 				});
-			}
+            }
+            else { repositorioProducto.Editar(entidad); }
 
 			repositorioProducto.GuardarTodosLosCambios();
 			
