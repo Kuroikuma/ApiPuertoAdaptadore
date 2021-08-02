@@ -81,15 +81,23 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
 		// PUT api/<ProductoController>/5
 		[EnableCors("_myAllowSpecificOrigins")]
 		[HttpPut("{id}")]
-		public ActionResult Put(Guid id, [FromBody] Ingrediente Entidad)
+		public ActionResult<String> Put(Guid id, [FromBody] Ingrediente Entidad)
 		{
-			IngredienteServicio servicio = CrearServicio();
+			try
+			{
+				IngredienteServicio servicio = CrearServicio();
 
-			Entidad.IngredienteID = id;
+				Entidad.IngredienteID = id;
 
-			servicio.Editar(Entidad);
+				servicio.Editar(Entidad);
 
-			return Ok("Editado exitosamente");
+				return Ok("success");
+			}
+			catch(Exception e)
+			{
+				return BadRequest("error");
+			}
+			
 		}
 
 		// DELETE api/<ProductoController>/5

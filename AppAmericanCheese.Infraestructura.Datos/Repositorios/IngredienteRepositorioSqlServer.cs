@@ -1,5 +1,6 @@
 ﻿using AppAmericanCheese.Dominio.Entidades;
 using AppAmericanCheese.Dominio.Interfaces.Repositorios;
+using Newtonsoft.Json.Schema;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,8 +38,16 @@ namespace AppAmericanCheese.Infraestructura.Datos.Repositorios
 			if (ingredienteSeleccionado != null)
 			{
 				ingredienteSeleccionado.Nombre = ingrediente.Nombre;
-				ingredienteSeleccionado.precio = ingrediente.precio;
-				ingredienteSeleccionado.Stock = ingrediente.Stock;
+				if (ingrediente.precio == null || ingrediente.precio == 0)
+				{
+					ingredienteSeleccionado.precio = ingredienteSeleccionado.precio;
+				}
+				else
+				{
+					ingredienteSeleccionado.precio = (ingredienteSeleccionado.precio + ingrediente.precio) / 2;
+				}
+				
+				ingredienteSeleccionado.Stock = ingredienteSeleccionado.Stock + ingrediente.Stock;
 				ingredienteSeleccionado.Imagen = ingrediente.Imagen;
 
 				db.Entry(ingredienteSeleccionado).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
