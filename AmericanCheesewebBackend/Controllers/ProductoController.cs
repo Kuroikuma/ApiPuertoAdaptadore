@@ -134,6 +134,7 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
 											   Precio = pd.Precio,
 											   Tamaño = pd.Tamaño,
 											   Stock = pd.Stock,
+											   Descripcion = pd.Descripcion,
 											   isCompound = pd.isCompound,
 											   Ingrediente = (from cp in context.CrearProducto
 															  join p in context.Producto on cp.ProductoID equals p.ProductoID
