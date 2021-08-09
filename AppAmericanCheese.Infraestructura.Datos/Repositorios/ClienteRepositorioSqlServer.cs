@@ -39,8 +39,6 @@ namespace AppAmericanCheese.Infraestructura.Datos.Repositorios
 				ClienteSeleccionado.Nombre = Cliente.Nombre;
 				ClienteSeleccionado.Contraseña = Cliente.Contraseña;
 				ClienteSeleccionado.Correo = Cliente.Correo;
-				ClienteSeleccionado.usuario = Cliente.usuario;
-
 				db.Entry(ClienteSeleccionado).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
 			}
 		}

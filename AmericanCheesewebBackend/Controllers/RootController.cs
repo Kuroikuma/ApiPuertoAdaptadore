@@ -10,6 +10,7 @@ using AppAmericanCheese.Infraestructura.Datos;
 using AppAmericanCheese.Infraestructura.Datos.Repositorios;
 using AppAmericanCheese.Dominio;
 using Microsoft.AspNetCore.Cors;
+using System.IO;
 
 namespace AppAmericanCheese.Infraestructura.API.Controllers
 {
@@ -72,8 +73,15 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
         [HttpPost]
         public ActionResult<Root> Post([FromBody] Root entidad)
         {
-            RootServicio servicio = CrearServicio();
+            var base64array = Convert.FromBase64String(entidad.Imagen);
+            Guid name = Guid.NewGuid();
+            string filePashString = $"Content/img/{name}.png";
 
+            var filePath = Path.Combine($"Content/img/{name}.png");
+            System.IO.File.WriteAllBytes(filePath, base64array);
+
+            RootServicio servicio = CrearServicio();
+            entidad.Imagen = filePashString;
             var resultado = servicio.Agregar(entidad);
 
             return Ok(resultado);

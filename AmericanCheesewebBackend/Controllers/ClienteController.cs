@@ -3,9 +3,11 @@ using AppAmericanCheese.Dominio.Entidades;
 using AppAmericanCheese.Infraestructura.Datos;
 using AppAmericanCheese.Infraestructura.Datos.Repositorios;
 using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -71,11 +73,33 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
 		// POST api/<ProductoController>
 		[EnableCors("_myAllowSpecificOrigins")]
 		[HttpPost]
-		public ActionResult<Cliente> Post([FromBody] Cliente Entidad)
+		public ActionResult<Cliente> Post([FromBody] Cliente cliente)
 		{
-			ClienteServicio servicio = CrearServicio();
 
-			var resultado = servicio.Agregar(Entidad);
+			var base64array = Convert.FromBase64String(cliente.Imagen);
+			Guid name = Guid.NewGuid();
+			string filePashString = $"Content/img/{name}.png";
+
+			var filePath = Path.Combine($"Content/img/{name}.png");
+			System.IO.File.WriteAllBytes(filePath, base64array);
+			
+			/*
+						if (client_File.files.Count>0)
+						{
+
+								var filePath = "C:\\Users\\Arleys Gatica\\ApiPuertoAdaptadore\\AmericanCheesewebBackend\\Content\\img" + file.FileName;
+
+								using (var stream = System.IO.File.Create(filePath))
+								{
+									file.CopyToAsync(stream);
+								}
+								client_File.Entidad.Imagen = "Content\\img" + file.FileName;
+
+						}
+				*/
+			ClienteServicio servicio = CrearServicio();
+			cliente.Imagen = filePashString;
+			var resultado = servicio.Agregar(cliente);
 
 			return Ok(resultado);
 		}

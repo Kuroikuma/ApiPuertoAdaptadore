@@ -11,7 +11,9 @@ namespace AppAmericanCheese.Dominio.Entidades
         public string Correo { get; set; }
         public int tipo { get; set; }
         public string Apellido { get; set; }
-        public string Usuario{ get; set; }
+        public string Imagen { get; set; }
+        public int telefono { get; set; }
+        public string genero { get; set; }
         public string Contraseña { get; set; }
     }
 }

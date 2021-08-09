@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -73,8 +74,15 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
 		[HttpPost]
 		public ActionResult<Empleado> Post([FromBody] Empleado Entidad)
 		{
-			EmpleadoServicio servicio = CrearServicio();
+			var base64array = Convert.FromBase64String(Entidad.Imagen);
+			Guid name = Guid.NewGuid();
+			string filePashString = $"Content/img/{name}.png";
 
+			var filePath = Path.Combine($"Content/img/{name}.png");
+			System.IO.File.WriteAllBytes(filePath, base64array);
+
+			EmpleadoServicio servicio = CrearServicio();
+			Entidad.Imagen = filePashString;
 			var resultado = servicio.Agregar(Entidad);
 
 			return Ok(resultado);

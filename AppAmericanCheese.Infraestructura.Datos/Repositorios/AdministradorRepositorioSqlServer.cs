@@ -34,7 +34,6 @@ namespace AppAmericanCheese.Infraestructura.Datos.Repositorios
                 AdministradorSeleccionado.Nombre = entidad.Nombre;
                 AdministradorSeleccionado.Apellido = entidad.Apellido;
                 AdministradorSeleccionado.Contraseña = entidad.Contraseña;
-                AdministradorSeleccionado.Usuario = entidad.Usuario;
 
                 db.Entry(AdministradorSeleccionado).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             }
