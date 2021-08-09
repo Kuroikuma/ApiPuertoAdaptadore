@@ -82,21 +82,7 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
 
 			var filePath = Path.Combine($"Content/img/{name}.png");
 			System.IO.File.WriteAllBytes(filePath, base64array);
-			
-			/*
-						if (client_File.files.Count>0)
-						{
 
-								var filePath = "C:\\Users\\Arleys Gatica\\ApiPuertoAdaptadore\\AmericanCheesewebBackend\\Content\\img" + file.FileName;
-
-								using (var stream = System.IO.File.Create(filePath))
-								{
-									file.CopyToAsync(stream);
-								}
-								client_File.Entidad.Imagen = "Content\\img" + file.FileName;
-
-						}
-				*/
 			ClienteServicio servicio = CrearServicio();
 			cliente.Imagen = filePashString;
 			var resultado = servicio.Agregar(cliente);
