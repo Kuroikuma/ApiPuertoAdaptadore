@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\adana\\ApiPuertoAdaptadore\\AppAmericanCheese.Infraestructura.Datos\\AppAmericanCheese.Infraestructura.Datos.csproj": {}
+    "C:\\Users\\Arleys Gatica\\Repositorio\\ApiPuertoAdaptadore\\AppAmericanCheese.Infraestructura.Datos\\AppAmericanCheese.Infraestructura.Datos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\adana\\ApiPuertoAdaptadore\\AppAmericanCheese.Dominio\\AppAmericanCheese.Dominio.csproj": {
+    "C:\\Users\\Arleys Gatica\\Repositorio\\ApiPuertoAdaptadore\\AppAmericanCheese.Dominio\\AppAmericanCheese.Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\adana\\ApiPuertoAdaptadore\\AppAmericanCheese.Dominio\\AppAmericanCheese.Dominio.csproj",
+        "projectUniqueName": "C:\\Users\\Arleys Gatica\\Repositorio\\ApiPuertoAdaptadore\\AppAmericanCheese.Dominio\\AppAmericanCheese.Dominio.csproj",
         "projectName": "AppAmericanCheese.Dominio",
-        "projectPath": "C:\\Users\\adana\\ApiPuertoAdaptadore\\AppAmericanCheese.Dominio\\AppAmericanCheese.Dominio.csproj",
-        "packagesPath": "C:\\Users\\adana\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\adana\\ApiPuertoAdaptadore\\AppAmericanCheese.Dominio\\obj\\",
+        "projectPath": "C:\\Users\\Arleys Gatica\\Repositorio\\ApiPuertoAdaptadore\\AppAmericanCheese.Dominio\\AppAmericanCheese.Dominio.csproj",
+        "packagesPath": "C:\\Users\\Arleys Gatica\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Arleys Gatica\\Repositorio\\ApiPuertoAdaptadore\\AppAmericanCheese.Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\adana\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Arleys Gatica\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,8 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://packagesource": {},
-          "https://www.nuget.org/api/v2": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
@@ -41,6 +40,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.8, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.15, )"
@@ -71,21 +74,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\adana\\ApiPuertoAdaptadore\\AppAmericanCheese.Infraestructura.Datos\\AppAmericanCheese.Infraestructura.Datos.csproj": {
+    "C:\\Users\\Arleys Gatica\\Repositorio\\ApiPuertoAdaptadore\\AppAmericanCheese.Infraestructura.Datos\\AppAmericanCheese.Infraestructura.Datos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\adana\\ApiPuertoAdaptadore\\AppAmericanCheese.Infraestructura.Datos\\AppAmericanCheese.Infraestructura.Datos.csproj",
+        "projectUniqueName": "C:\\Users\\Arleys Gatica\\Repositorio\\ApiPuertoAdaptadore\\AppAmericanCheese.Infraestructura.Datos\\AppAmericanCheese.Infraestructura.Datos.csproj",
         "projectName": "AppAmericanCheese.Infraestructura.Datos",
-        "projectPath": "C:\\Users\\adana\\ApiPuertoAdaptadore\\AppAmericanCheese.Infraestructura.Datos\\AppAmericanCheese.Infraestructura.Datos.csproj",
-        "packagesPath": "C:\\Users\\adana\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\adana\\ApiPuertoAdaptadore\\AppAmericanCheese.Infraestructura.Datos\\obj\\",
+        "projectPath": "C:\\Users\\Arleys Gatica\\Repositorio\\ApiPuertoAdaptadore\\AppAmericanCheese.Infraestructura.Datos\\AppAmericanCheese.Infraestructura.Datos.csproj",
+        "packagesPath": "C:\\Users\\Arleys Gatica\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Arleys Gatica\\Repositorio\\ApiPuertoAdaptadore\\AppAmericanCheese.Infraestructura.Datos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\adana\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Arleys Gatica\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -93,15 +96,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://packagesource": {},
-          "https://www.nuget.org/api/v2": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\adana\\ApiPuertoAdaptadore\\AppAmericanCheese.Dominio\\AppAmericanCheese.Dominio.csproj": {
-                "projectPath": "C:\\Users\\adana\\ApiPuertoAdaptadore\\AppAmericanCheese.Dominio\\AppAmericanCheese.Dominio.csproj"
+              "C:\\Users\\Arleys Gatica\\Repositorio\\ApiPuertoAdaptadore\\AppAmericanCheese.Dominio\\AppAmericanCheese.Dominio.csproj": {
+                "projectPath": "C:\\Users\\Arleys Gatica\\Repositorio\\ApiPuertoAdaptadore\\AppAmericanCheese.Dominio\\AppAmericanCheese.Dominio.csproj"
               }
             }
           }
@@ -146,7 +148,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
