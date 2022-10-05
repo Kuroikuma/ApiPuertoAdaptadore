@@ -165,15 +165,25 @@ namespace AppAmericanCheese.Infraestructura.API.Controllers
 		{
 			try
 			{
-				var base64array = Convert.FromBase64String(Entidad.Imagen);
-				Guid name = Guid.NewGuid();
-				string filePashString = $"Content/img/{name}.png";
+				if(Entidad.Imagen != null)
+				{
+                    var base64array = Convert.FromBase64String(Entidad.Imagen);
+                    Guid name = Guid.NewGuid();
+                    string filePashString = $"Content/img/{name}.png";
 
-				var filePath = Path.Combine($"Content/img/{name}.png");
-				System.IO.File.WriteAllBytes(filePath, base64array);
+                    var filePath = Path.Combine($"Content/img/{name}.png");
+                    System.IO.File.WriteAllBytes(filePath, base64array);
+
+                    Entidad.Imagen = filePashString;
+                }else
+				{
+					Entidad.Imagen = "";
+
+                }
+				
 
 				ProductoServicio servicio = CrearServicio();
-				Entidad.Imagen = filePashString;
+				
 				var resultado = servicio.Agregar(Entidad);
 
 				return Ok("success");

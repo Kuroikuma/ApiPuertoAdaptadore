@@ -490,3 +490,4 @@ C:\Users\Arleys Gatica\Repositorio\ApiPuertoAdaptadore\AppAmericanCheese.Infraes
 C:\Users\Arleys Gatica\Repositorio\ApiPuertoAdaptadore\AppAmericanCheese.Infraestructura.Datos\obj\Debug\netcoreapp3.1\AppAmericanCheese.Infraestructura.Datos.dll
 C:\Users\Arleys Gatica\Repositorio\ApiPuertoAdaptadore\AppAmericanCheese.Infraestructura.Datos\obj\Debug\netcoreapp3.1\AppAmericanCheese.Infraestructura.Datos.pdb
 C:\Users\Arleys Gatica\Repositorio\ApiPuertoAdaptadore\AppAmericanCheese.Infraestructura.Datos\obj\Debug\netcoreapp3.1\AppAmericanCheese.Infraestructura.Datos.genruntimeconfig.cache
+C:\Users\Arleys Gatica\Repositorio\ApiPuertoAdaptadore\AppAmericanCheese.Infraestructura.Datos\obj\Debug\netcoreapp3.1\AppAmericanCheese.Infraestructura.Datos.csproj.CopyComplete
