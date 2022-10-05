@@ -351,3 +351,4 @@ info.text
 /PlannerApp/PlannerApp/Src/dist/
 /PlannerApp/PlannerApp/appsettings.json
 /PlannerApp/PlannerApp/Properties/
+*.cache
