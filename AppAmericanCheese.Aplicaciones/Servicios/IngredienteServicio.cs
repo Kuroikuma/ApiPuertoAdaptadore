@@ -22,7 +22,7 @@ namespace AppAmericanCheese.Aplicaciones.Servicios
 			if (entidad != null)
 			{
 				var resultado = repositorio.Agregar(entidad);
-				if (resultado.Nombre == "" || resultado.precio == 0 || resultado.Stock == 0 || resultado.unidadMedida == "")
+				if (resultado.Nombre == "" || resultado.precio == 0 || resultado.Stock == 0 || resultado.UnidadMedida == "")
 				{
 					throw new Exception("error");
 				}
