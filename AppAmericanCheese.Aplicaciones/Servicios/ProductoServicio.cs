@@ -46,7 +46,7 @@ namespace AppAmericanCheese.Aplicaciones.Servicios
 					crearProducto.ProductoID = entidad.ProductoID;
 				
 					crearProducto.CostoDeIngredientes = IngredienteSeleccionado.precio * crearProducto.CantidadIngrediente;
-					entidad.Costo = entidad.Costo + crearProducto.CostoDeIngredientes;
+					entidad.Costo += crearProducto.CostoDeIngredientes;
 					repositorioCrearProducto.Agregar(crearProducto);
 					repositorioProducto.Editar(entidad);
 				});
@@ -87,7 +87,7 @@ namespace AppAmericanCheese.Aplicaciones.Servicios
 					crearProducto.ProductoID = entidad.ProductoID;
 
 					crearProducto.CostoDeIngredientes = IngredienteSeleccionado.precio * crearProducto.CantidadIngrediente;
-					productoSeleccionado.Costo = productoSeleccionado.Costo + crearProducto.CostoDeIngredientes;
+					productoSeleccionado.Costo += crearProducto.CostoDeIngredientes;
                     if (crearProducto.CrearProductoID == null) repositorioCrearProducto.Agregar(crearProducto); 
 					else repositorioCrearProducto.Editar(crearProducto);
 

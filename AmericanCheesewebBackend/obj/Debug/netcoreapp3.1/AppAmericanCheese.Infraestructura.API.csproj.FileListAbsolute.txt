@@ -622,8 +622,6 @@ C:\Users\Arleys Gatica\Repositorio\ApiPuertoAdaptadore\AmericanCheesewebBackend\
 C:\Users\Arleys Gatica\Repositorio\ApiPuertoAdaptadore\AmericanCheesewebBackend\obj\Debug\netcoreapp3.1\AppAmericanCheese.Infraestructura.API.csproj.CoreCompileInputs.cache
 C:\Users\Arleys Gatica\Repositorio\ApiPuertoAdaptadore\AmericanCheesewebBackend\obj\Debug\netcoreapp3.1\AppAmericanCheese.Infraestructura.API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Arleys Gatica\Repositorio\ApiPuertoAdaptadore\AmericanCheesewebBackend\obj\Debug\netcoreapp3.1\staticwebassets\AppAmericanCheese.Infraestructura.API.StaticWebAssets.Manifest.cache
-C:\Users\Arleys Gatica\Repositorio\ApiPuertoAdaptadore\AmericanCheesewebBackend\obj\Debug\netcoreapp3.1\staticwebassets\AppAmericanCheese.Infraestructura.API.StaticWebAssets.xml
-C:\Users\Arleys Gatica\Repositorio\ApiPuertoAdaptadore\AmericanCheesewebBackend\obj\Debug\netcoreapp3.1\scopedcss\bundle\AppAmericanCheese.Infraestructura.API.styles.css
 C:\Users\Arleys Gatica\Repositorio\ApiPuertoAdaptadore\AmericanCheesewebBackend\obj\Debug\netcoreapp3.1\AppAmericanCheese.Infraestructura.API.RazorTargetAssemblyInfo.cache
 C:\Users\Arleys Gatica\Repositorio\ApiPuertoAdaptadore\AmericanCheesewebBackend\obj\Debug\netcoreapp3.1\AppAmericanCheese.Infraestructura.API.csproj.CopyComplete
 C:\Users\Arleys Gatica\Repositorio\ApiPuertoAdaptadore\AmericanCheesewebBackend\obj\Debug\netcoreapp3.1\AppAmericanCheese.Infraestructura.API.dll

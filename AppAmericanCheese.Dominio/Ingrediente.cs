@@ -11,7 +11,7 @@ namespace AppAmericanCheese.Dominio.Entidades
         public decimal precio { get; set; }
         public decimal Stock { get; set; }
         public string Imagen { get; set; }
-        public string unidadMedida { get; set; }
+        public string UnidadMedida { get; set; }
         public List<CrearProducto> crearProductosNav { get; set; }
     }
 }
